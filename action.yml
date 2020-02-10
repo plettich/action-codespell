@@ -1,0 +1,24 @@
+name: 'Run codespell with reviewdog'
+description: '🐶 Run codespell with reviewdog on pull requests to improve code review experience.'
+author: 'plettich'
+inputs:
+  github_token:
+    description: 'GITHUB_TOKEN.'
+    default: ${{ github.token }}
+    required: true
+  level:
+    description: 'Report level for reviewdog [info,warning,error]'
+    default: 'error'
+  reporter:
+    description: 'Reporter of reviewdog command [github-pr-check,github-pr-review].'
+    default: 'github-pr-check'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.github_token }}
+    - ${{ inputs.level }}
+    - ${{ inputs.reporter }}
+branding:
+  icon: 'edit-3'
+  color: 'purple'
