@@ -5,7 +5,7 @@ RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/in
 RUN apk --no-cache add git python3 && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install codespell
+RUN pip install codespell
 
 COPY entrypoint.sh /entrypoint.sh
 
