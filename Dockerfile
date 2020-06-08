@@ -2,10 +2,10 @@ FROM alpine:latest
 
 RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b /usr/local/bin/ v0.9.15
 
-RUN apk --no-cache add git python3 && \
+RUN apk --no-cache add git python3 py3-pip && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install codespell
+RUN pip install codespell
 
 COPY entrypoint.sh /entrypoint.sh
 
