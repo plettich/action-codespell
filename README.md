@@ -28,10 +28,11 @@ It's same as `-reporter` flag of reviewdog.
 
 ## Configuration
 
-The codespell action can be configured with two files in the main repository:
+The codespell action can be configured with these files in the main repository:
 - `.codespell_skip` contains one path or pattern per line (paths starting
   with `./`) which will be skipped during the check.
-- `-codespell_exclude` contains source lines which will not be checked.
+- `.codespell_exclude` contains source lines which will not be checked.
+- `.codespell_ignore` contains on word per line which should be ignored.
 
 ## Example usage
 
@@ -53,5 +54,5 @@ jobs:
 
 ## TODO
 - [ ] update word list
-- [ ] add words to ignore during check
 - [ ] add own wordlist (exclusive or additional)
+- [ ] use `pyproject.toml` for configuration
